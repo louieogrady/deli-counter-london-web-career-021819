@@ -4,7 +4,7 @@ def take_a_number(katz_deli, name)
 end
 
 def now_serving(katz_deli)
-  if katz_deli.length == 0
+  if katz_deli == []
     puts "There is nobody waiting to be served!"
   else
     puts "Currently serving #{katz_deli.shift}."
@@ -13,16 +13,16 @@ def now_serving(katz_deli)
 end
 
 def line(katz_deli)
-  if katz_deli.length == 0
+  if katz_deli == []
     puts "The line is currently empty."
   else
-    message="The line is currently:"
+    output = "The line is currently:"
 
-    katz_deli.each_with_index do |value, index|
-      message += " #{index.to_i+1}. #{value}"
+    katz_deli.each_with_index do |name, position|
+      output += " #{position+1}. #{name}"
     end
 
-    puts "#{message}"
+    puts "#{output}"
   end
 
 
